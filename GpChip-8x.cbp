@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="GpChip-8x" />
+		<Option pch_mode="2" />
+		<Option compiler="armelfgcc" />
+		<Build>
+			<Target title="Windows">
+				<Option output="bin\GpChip-8x" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-W" />
+					<Add option="-Wall" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="mingw32" />
+					<Add library="SDLmain" />
+					<Add library="SDL" />
+					<Add library="SDL_mixer" />
+					<Add library="SDL_ttf" />
+					<Add library="SDL_image" />
+				</Linker>
+			</Target>
+			<Target title="GP2X">
+				<Option output="bin\GpChip-8x.gpe" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="0" />
+				<Option compiler="armelfgcc" />
+				<Compiler>
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-DGP2X" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static -ljpeg -lgcc -lm -lpthread" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-g" />
+		</Compiler>
+		<Unit filename="bmp.c">
+			<Option compilerVar="CC" />
+			<Option target="GP2X" />
+		</Unit>
+		<Unit filename="bmp.h">
+			<Option target="GP2X" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="minimal.c">
+			<Option compilerVar="CC" />
+			<Option target="GP2X" />
+		</Unit>
+		<Unit filename="minimal.h">
+			<Option target="GP2X" />
+		</Unit>
+		<Unit filename="minimal_940t.h">
+			<Option target="GP2X" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,11 @@
+all : gpchip.dge
+
+
+TOOLCHAIN = /opt/miyoo
+CC=$(TOOLCHAIN)/bin/arm-linux-gcc
+
+gpchip.dge: main.o
+	$(CC) -o gpchip.dge main.o -lSDL -lSDL_ttf -lSDL_image -lSDL_mixer -Wall -O3 -lSDLmain -s -o gpchip.dge
+
+main.o: main.c
+	$(CC) main.c -c -o main.o 
